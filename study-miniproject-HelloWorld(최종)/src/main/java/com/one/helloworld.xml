@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment/>
+    <entry key="insertPerson">
+        INSERT
+            INTO entrance_info (
+                                ENTRANCE_CODE
+                                , TICKET_CODE
+                                , PERSON_NAME
+                                , PERSON_AGE
+                                , PERSON_GENDER
+                                , PERSON_HEIGHT
+                              )
+        VALUES (?, ?, ?, ?, ?, ?)
+    </entry>
+
+    <entry key="goHomePerson">
+        DELETE
+            FROM
+                entrance_info
+            WHERE
+                ENTRANCE_CODE = ?
+    </entry>
+
+    <entry key="updateWaitingTime">
+        UPDATE
+            ride_info
+        SET
+            WATING_TIME = ?
+        WHERE
+            RIDE_CODE = ?
+    </entry>
+
+    <entry key="enterRide">
+        UPDATE
+            ride_info
+        SET
+            ENTRANCE_CODE = ?
+        WHERE
+            RIDE_SORT = ?
+    </entry>
+
+    <entry key="searchAllPerson">
+        SELECT
+            ENTRANCE_CODE
+            , TICKET_CODE
+            , PERSON_NAME
+            , PERSON_AGE
+            , PERSON_GENDER
+            , PERSON_HEIGHT
+        FROM
+            entrance_info
+        ORDER BY
+            ENTRANCE_CODE
+    </entry>
+
+</properties>
